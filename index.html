@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linux TV Kiosk Shell</title>
+  <link rel="stylesheet" href="src/shell.css">
+</head>
+<body>
+  <main class="shell" aria-label="TV dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="shell-eyebrow">LOCAL KIOSK</p>
+        <h1 id="shell-title">Linux TV Kiosk Shell</h1>
+      </div>
+      <div class="status-pill" id="shell-status">waiting</div>
+    </header>
+
+    <section class="grid" id="card-grid" aria-label="Dashboard cards"></section>
+
+    <footer class="ticker" id="shell-ticker">Use arrow keys, Enter, Escape. Remote bridge actions are also supported.</footer>
+  </main>
+
+  <dialog class="modal" id="detail-modal">
+    <article>
+      <header>
+        <div>
+          <p class="eyebrow" id="modal-kicker">DETAIL</p>
+          <h2 id="modal-title">Card</h2>
+        </div>
+        <button id="modal-close" type="button" aria-label="Close">×</button>
+      </header>
+      <div id="modal-body"></div>
+    </article>
+  </dialog>
+
+  <script src="data/shell-config.js"></script>
+  <script src="data/live.example.js"></script>
+  <script src="src/shell.js"></script>
+</body>
+</html>
