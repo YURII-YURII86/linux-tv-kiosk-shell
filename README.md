@@ -119,6 +119,10 @@ Verified in this standalone repo:
 
 Not yet verified on a real TV kiosk device after extraction.
 
+## Part of Linux Kiosk Stack
+
+This project is one layer of the [Linux Kiosk Stack](https://github.com/YURII-YURII86/linux-kiosk-stack): a local-first toolkit for Linux TV kiosks, dashboards, signage screens, and appliance panels.
+
 ## Roadmap
 
 - Screenshot/GIF demo.
