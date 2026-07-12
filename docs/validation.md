@@ -39,3 +39,14 @@ This is not a full browser visual test, but it catches runtime regressions witho
 - real Chromium/Firefox kiosk mode after extraction;
 - real Xiaomi/MiTV remote hardware integration;
 - screenshots/GIF demo.
+
+
+## Screenshot asset check
+
+`tests/visual_asset_check.py` verifies that the committed browser demo screenshot exists and has a useful size.
+
+```bash
+python3 tests/visual_asset_check.py
+```
+
+This is not visual regression testing. It is a publication-quality guard that prevents the README/demo image from disappearing or being replaced by an invalid tiny artifact.

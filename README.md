@@ -5,6 +5,8 @@
 
 A lightweight vanilla HTML/CSS/JS shell for TV dashboards, Linux kiosks, signage screens, and local appliance panels.
 
+![Linux TV Kiosk Shell demo](docs/assets/dashboard-demo.png)
+
 No React. No Electron. No build step. No cloud requirement.
 
 ```text
@@ -94,6 +96,22 @@ Supported actions:
 
 It pairs naturally with `xiaomi-mitv-remote-linux-kiosk`, but does not require it.
 
+## Browser demo screenshot
+
+A browser-rendered screenshot is committed at:
+
+```text
+docs/assets/dashboard-demo.png
+```
+
+Re-capture it locally when Chromium/Chrome is available:
+
+```bash
+./scripts/capture_demo_screenshot.sh
+```
+
+See `docs/demo.md`.
+
 ## Runtime validation
 
 The repo includes a dependency-free Node DOM harness:
@@ -111,6 +129,7 @@ It executes the real `src/shell.js` against demo config/live data and validates 
 - `docs/integration.md` — local data and remote bridge integration.
 - `docs/performance.md` — weak-device constraints.
 - `docs/validation.md` — static, contract, and DOM validation.
+- `docs/demo.md` — browser screenshot and re-capture instructions.
 - `examples/integration/xiaomi-mitv-remote/` — remote input bridge example.
 - `examples/integration/live-data-updater/` — local live data updater example.
 
@@ -140,6 +159,7 @@ Verified in this standalone repo:
 - shell source syntax check through Node;
 - contract checks for demo config/live files;
 - DOM smoke checks for render/focus/modal/remote bridge behavior;
+- committed browser screenshot dimensions/asset check;
 - fresh-clone smoke tests;
 - GitHub Actions CI.
 
@@ -151,11 +171,10 @@ This project is one layer of the [Linux Kiosk Stack](https://github.com/YURII-YU
 
 ## Roadmap
 
-- Screenshot/GIF demo.
 - Theme presets.
 - More card renderer types.
 - Optional generated catalog from `local-dashboard-widget-sdk`.
-- Real browser screenshot/GIF demo.
+- GIF/video walkthrough.
 - Optional Playwright visual gate.
 
 ## License

@@ -3,6 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 tests/static_checks.py
 python3 tests/contracts_check.py
+python3 tests/visual_asset_check.py
 if command -v node >/dev/null 2>&1; then
   node --check src/shell.js
   node tests/dom_smoke.js
