@@ -25,7 +25,7 @@ class Element {
     this._innerHTML = String(value);
     if (this.id === 'card-grid' && this.documentRef) {
       this.documentRef.cards = [];
-      const regex = /<article class="card" tabindex="-1" data-index="(\d+)" data-state="([^"]*)" aria-label="([^"]*)">/g;
+      const regex = /<article class="card" tabindex="-1" data-index="(\d+)" data-state="([^"]*)" aria-label="([^"]*)"(?: data-kind="([^"]*)")?>/g;
       let match;
       while ((match = regex.exec(this._innerHTML))) {
         const card = new Element(`card-${match[1]}`, this.documentRef);
@@ -33,6 +33,7 @@ class Element {
         card.dataset.index = match[1];
         card.dataset.state = match[2];
         card.ariaLabel = match[3];
+        card.dataset.kind = match[4] || '';
         this.documentRef.cards.push(card);
       }
     }

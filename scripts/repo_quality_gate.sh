@@ -22,6 +22,7 @@ python3 tests/visual_asset_check.py
 printf '\n[4/9] JavaScript syntax and DOM smoke\n'
 node --check src/shell.js
 node tests/dom_smoke.js
+node tests/widget_renderer_coverage.js
 
 printf '\n[5/9] HTML/script contract\n'
 python3 - <<'PY'
@@ -39,7 +40,7 @@ printf '\n[6/9] README/docs required sections\n'
 python3 - <<'PY'
 from pathlib import Path
 readme=Path('README.md').read_text()
-required=['Why this exists','Quick start','Runtime validation','Remote control integration','Repository quality gate','Current verification status','Browser demo screenshot','Part of Linux Kiosk Stack','Roadmap']
+required=['Why this exists','Quick start','Runtime validation','Remote control integration','Repository quality gate','Current verification status','Browser demo screenshot','Widget Manager renderer coverage','Part of Linux Kiosk Stack','Roadmap']
 missing=[x for x in required if x not in readme]
 assert not missing, missing
 for path, markers in {
@@ -49,6 +50,7 @@ for path, markers in {
     'docs/performance.md':['Performance constraints'],
     'docs/validation.md':['DOM smoke'],
     'docs/demo.md':['Demo screenshot'],
+    'docs/widget-renderers.md':['Widget Manager renderer coverage','Covered widget kinds'],
 }.items():
     text=Path(path).read_text()
     for marker in markers:

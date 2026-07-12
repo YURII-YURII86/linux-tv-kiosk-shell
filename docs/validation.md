@@ -50,3 +50,8 @@ python3 tests/visual_asset_check.py
 ```
 
 This is not visual regression testing. It is a publication-quality guard that prevents the README/demo image from disappearing or being replaced by an invalid tiny artifact.
+
+
+## Widget renderer coverage
+
+`node tests/widget_renderer_coverage.js` verifies that all 22 `local-dashboard-widget-manager` MVP widget kinds are registered and rendered by the shell.

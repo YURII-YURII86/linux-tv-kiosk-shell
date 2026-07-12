@@ -112,6 +112,16 @@ Re-capture it locally when Chromium/Chrome is available:
 
 See `docs/demo.md`.
 
+## Widget Manager renderer coverage
+
+The shell can render widget configs exported by `local-dashboard-widget-manager`. The MVP renderer registry covers all 22 Widget Manager kinds and keeps the old simple card contract compatible.
+
+```bash
+node tests/widget_renderer_coverage.js
+```
+
+See `docs/widget-renderers.md`.
+
 ## Runtime validation
 
 The repo includes a dependency-free Node DOM harness:

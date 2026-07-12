@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2 - 2026-07-12
+
+- Added Widget Manager renderer coverage for all 22 `local-dashboard-widget-manager` MVP widget kinds.
+- Added renderer-specific shell markup/CSS for charts, tables, lists, alerts, rings/gauges, media placeholders, QR/info, logs, and remote hints.
+- Added `tests/widget_renderer_coverage.js` to verify all Widget Manager kinds are registered and rendered.
+- Added `docs/widget-renderers.md`.
+
 ## 0.2.1 - 2026-07-12
 
 - Added committed browser-rendered demo screenshot.

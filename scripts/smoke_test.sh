@@ -16,3 +16,5 @@ for p in ['README.md','docs/config.md','docs/focus-model.md','docs/integration.m
 print('docs ok')
 PY
 echo 'smoke ok'
+
+node tests/widget_renderer_coverage.js
