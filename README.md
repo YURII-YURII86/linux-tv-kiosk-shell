@@ -33,6 +33,7 @@ This project gives you that starting point.
 - Local live data via `window.KIOSK_LIVE`.
 - Modal detail view.
 - Bounded card text and responsive TV layout.
+- Dependency-free DOM smoke tests for render/focus/modal/remote actions.
 - Visual/static smoke tests.
 - No network fetches from the browser by default.
 
@@ -93,12 +94,35 @@ Supported actions:
 
 It pairs naturally with `xiaomi-mitv-remote-linux-kiosk`, but does not require it.
 
+## Runtime validation
+
+The repo includes a dependency-free Node DOM harness:
+
+```bash
+node tests/dom_smoke.js
+```
+
+It executes the real `src/shell.js` against demo config/live data and validates card rendering, focus movement, modal open/close, and `window.KIOSK_REMOTE_ACTION` remote bridge behavior.
+
 ## Documentation
 
 - `docs/config.md` — shell config contract.
 - `docs/focus-model.md` — TV/remote navigation model.
 - `docs/integration.md` — local data and remote bridge integration.
 - `docs/performance.md` — weak-device constraints.
+- `docs/validation.md` — static, contract, and DOM validation.
+- `examples/integration/xiaomi-mitv-remote/` — remote input bridge example.
+- `examples/integration/live-data-updater/` — local live data updater example.
+
+## Repository quality gate
+
+Run publication-readiness checks locally:
+
+```bash
+./scripts/repo_quality_gate.sh
+```
+
+The gate verifies static checks, contract checks, DOM smoke behavior, docs sections, local Markdown links, privacy/publication cleanliness, and CI workflow hygiene.
 
 ## Test
 
@@ -113,7 +137,9 @@ Verified in this standalone repo:
 - static file presence;
 - config/live JS parseability;
 - HTML contract checks;
-- shell source syntax check through Node when available;
+- shell source syntax check through Node;
+- contract checks for demo config/live files;
+- DOM smoke checks for render/focus/modal/remote bridge behavior;
 - fresh-clone smoke tests;
 - GitHub Actions CI.
 
@@ -129,8 +155,8 @@ This project is one layer of the [Linux Kiosk Stack](https://github.com/YURII-YU
 - Theme presets.
 - More card renderer types.
 - Optional generated catalog from `local-dashboard-widget-sdk`.
-- Integration example with `xiaomi-mitv-remote-linux-kiosk`.
-- Visual browser gate in Playwright.
+- Real browser screenshot/GIF demo.
+- Optional Playwright visual gate.
 
 ## License
 
